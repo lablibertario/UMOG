@@ -4,8 +4,8 @@ import bpy
 import bgl
 import copy
 import numpy as np
-import pyximport
-pyximport.install()
+#import pyximport
+#pyximport.install()
 from ...events import events
 
 class ReactionDiffusionBGLNode(UMOGNode):

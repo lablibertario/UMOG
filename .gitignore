@@ -1,5 +1,6 @@
-__pycache__/
+#For this branch only allow the cython generated files to be commited
+#__pycache__/
 .idea/
-build/
+#build/
 umog_addon/compilation_info.json
 

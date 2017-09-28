@@ -2,8 +2,8 @@ from ..umog_node import UMOGNode
 import bpy
 import copy
 import numpy as np
-import pyximport
-pyximport.install()
+#import pyximport
+#pyximport.install()
 from ...events import events
 
 class ReactionDiffusionNode(UMOGNode):
