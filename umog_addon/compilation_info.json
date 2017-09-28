@@ -1,4 +1,7 @@
 {
+    "sys.version": "3.5.3 (default, May 20 2017, 19:10:40) [MSC v.1800 64 bit (AMD64)]",
+    "sys.platform": "win32",
+    "os.name": "nt",
     "sys.version_info": [
         3,
         5,
@@ -6,9 +9,6 @@
         "final",
         0
     ],
-    "sys.version": "3.5.3 (default, May 20 2017, 19:10:40) [MSC v.1800 64 bit (AMD64)]",
-    "os.name": "nt",
-    "sys.platform": "win32",
-    "Cython.__version__": "0.27",
-    "sys.api_version": 1013
+    "sys.api_version": 1013,
+    "Cython.__version__": "0.27"
 }
