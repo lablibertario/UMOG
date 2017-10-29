@@ -40,15 +40,17 @@ menus = OrderedDict([
             ("umog_ObjectAlternatorNode", "Object Alternator")
         ]
     }),
-    ("bmesh_menu", {
-        "bl_idname": "umog_bmesh_menu",
-        "bl_label": "Bmesh Menu",
-        "text": "Bmesh",
-        "bl_description": "Lorem Ipsum",
-        "icon": "SURFACE_NSPHERE",
+    (" ", "separator"),
+    ("mesh_menu", {
+        "bl_idname": "umog_mesh_menu",
+        "bl_label": "Mesh Menu",
+        "text": "Mesh",
+        "bl_description": "Nodes that deal with meshes",
+        "icon": "MESH_UVSPHERE",
         "nodes": [
-            ("umog_BMeshNode", "Bmesh Node"),
-            ("umog_BMeshCurlNode", "Bmesh Curl Node")
+            ("umog_GetMeshNode", "Get Mesh"),
+            ("umog_SetMeshNode", "Set Mesh"),
+            ("umog_DisplaceNode", "Displace Node"),
         ]
     }),
     ("geometry_menu", {
@@ -64,20 +66,25 @@ menus = OrderedDict([
             ("umog_SubdivideNode", "Subdivide"),
             ("umog_SharpEdgesNode", "Sharp Edges"),
             ("umog_SharpFacesNode", "Sharp Faces")
+            ]}),
+    ("  ", "separator"),
+    ("math_menu", {
+        "bl_idname": "umog_math_menu",
+        "bl_label": "Math Menu",
+        "text": "Math",
+        "bl_description": "",
+        "icon": "LINENUMBERS_ON",
+        "nodes": [
+            ("umog_AddNode", "Add"),
+            ("umog_NumberNode", "Number"),
         ]
     }),
-    ("  ", "separator"),
     ("integer_menu", {
         "bl_idname": "umog_integer_menu",
         "bl_label": "Integer Menu",
         "text": "Integer",
-<<<<<<< HEAD
         "bl_description": "Nodes that operate on integers",
         "icon": "LINENUMBERS_ON",
-=======
-        "bl_description": "Lorem Ipsum",
-        "icon": "LINENUMBERS_OFF",
->>>>>>> origin/master
         "nodes": [
             ("umog_IntegerNode", "Integer"),
             ("umog_IntegerMathNode", "Integer Math"),
@@ -119,7 +126,7 @@ menus = OrderedDict([
             ("umog_Mat3Node", "Matrix 3x3 Node"),
             ("umog_MatrixMathNode", "Matrix Math"),
             ("umog_GaussNode", "Gaussian Blur"),
-            ("umog_LaplaceNode", "Laplacian Filter")
+            ("umog_LaplaceNode", "Laplacian Filter"),
         ]
     }),
     ("  ", "separator"),
@@ -130,11 +137,16 @@ menus = OrderedDict([
         "bl_description": "Lorem Ipsum",
         "icon": "IMGDISPLAY",
         "nodes": [
-            ("umog_TextureNode", "Texture"),
+            #("umog_TextureNode", "Texture"),
             ("umog_TextureColorsNode", "Texture Colors"),
             ("umog_TextureSettingsNode", "Texture Settings"),
             ("umog_TextureAlternatorNode", "Texture Alternator"),
             ("umog_SaveTextureNode", "Texture Save")
+            #("umog_GetTextureNode", "Get Texture"),
+            #("umog_SetTextureNode", "Set Texture"),
+            #("umog_LoadTextureNode", "Load Texture(s)"),
+            #("umog_TextureAlternatorNode", "Texture Alternator"),
+            
         ]
     })
 ])# yapf: disable

@@ -24,6 +24,7 @@ def compile_shader(shader_type, shader_source):
 
     for line in log_buffer.value[:length.value].decode('ascii').splitlines():
         print('GLSL: ' + line)
+    print(shader_source)
 
     assert success, 'Compiling of the shader failed.'
 

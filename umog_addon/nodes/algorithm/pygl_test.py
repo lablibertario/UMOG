@@ -18,7 +18,7 @@ pyximport.install()
 
 class PyGLNode(bpy.types.Node, UMOGOutputNode):
     bl_idname = "PyGLNode"
-    bl_label = "3d Reaction Diffusion Node"
+    bl_label = "2d Reaction Diffusion Node"
     
     assignedType = "Texture2"
     

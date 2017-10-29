@@ -1,3 +1,4 @@
+from ..engine import engine
 import bpy
 from bpy.types import NodeTree
 from bpy.props import *
@@ -158,34 +159,51 @@ class UMOGNodeTree(NodeTree):
         for node in self.linearizedNodes:
             node.disableUnlinkedHighlight()
 
-    def execute(self, refholder, animate = False):
-        self.update()
+    def execute(self):
+        print('Executing node tree')
 
-        for node in self.linearizedNodes:
-            node.packSockets()
+        nodes = self.topological_sort()
+        eng = engine.Engine(nodes)
+        eng.run()
 
-        for node in self.linearizedNodes:
-            node.preExecute(refholder)
+    # returns [(node, [(node_index, socket_index)])]
+    def topological_sort(self):
+        permanent = defaultdict(lambda: False)
+        temporary = defaultdict(lambda: False)
 
-        self.executeInProgress = True
+        nodes = []
 
-        for frame in range(self.properties.StartFrame, self.properties.EndFrame):
-            # Update the frame
-            scene = bpy.context.scene
-            scene.frame_set(frame)
+        def visit(node):
+            if permanent[node.name]:
+                return
+            if temporary[node.name]:
+                raise CyclicNodeGraphError()
 
-            for sub_frame in range(0, self.properties.SubFrames):
-                for node in self.linearizedNodes:
-                    node.refreshNode()
-                    node.execute(refholder)
+            temporary[node.name] = True
 
-            for node in self.linearizedNodes:
-                node.postFrame(refholder)
+            input_indices = []
+            for input in node.inputs:
+                if len(input.links) == 0:
+                    input_indices.append(None)
+                else:
+                    index = visit(input.links[0].from_node)
+                    input_indices.append((index, list(input.links[0].from_node.outputs).index(input.links[0].from_socket)))
 
-        self.executeInProgress = False
+            permanent[node.name] = True
 
-        for node in self.linearizedNodes:
-            node.postBake(refholder)
+            index = len(nodes)
+            nodes.append((node, input_indices))
+            return index
 
-        self.properties.bakeCount = self.properties.bakeCount + 1
+        for node in self.nodes:
+            if node._IsOutputNode:
+                visit(node)
+
+        return nodes
+
+class CompilationError(Exception):
+    pass
+
+class CyclicNodeGraphError(CompilationError):
+    pass
 

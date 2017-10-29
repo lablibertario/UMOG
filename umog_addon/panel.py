@@ -21,15 +21,15 @@ class UMOGNodeEditorPanel(bpy.types.Panel):
             tree = context.area.spaces.active.node_tree
             if getattr(tree, "bl_idname", "") == "umog_UMOGNodeTree":
                 props = tree.properties
-                self.layout.operator(
-                    "umog.bake_meshes", icon='RENDER_RESULT', text="Bake Mesh(es)")
-                self.layout.operator(
-                    "umog.render_animation", icon='RENDER_ANIMATION', text="Render Animation")
+                #self.layout.operator(
+                    #"umog.bake_meshes", icon='RENDER_RESULT', text="Bake Mesh(es)")
+                self.layout.operator("umog.run_node_tree", icon='RENDER_RESULT', text="Run")
+                #self.layout.operator(
+                    #"umog.render_animation", icon='RENDER_ANIMATION', text="Render Animation")
                 self.layout.prop(props, 'StartFrame')
                 self.layout.label(
                     "Length: " + str(props.EndFrame - props.StartFrame))
                 self.layout.prop(props, 'EndFrame')
-                self.layout.prop(props, 'SubFrames')
                 self.layout.prop(props, 'TextureResolution')
         except:
             pass
@@ -84,3 +84,4 @@ class UMOGNodeEditorPanel(bpy.types.Panel):
             # self.prop()
             # self.layout.template_list("MESH_UL_shape_keys", "", obj.data.shape_keys,
             #                       "key_blocks", obj, "active_shape_key_index", rows=rows)
+

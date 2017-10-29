@@ -7,4 +7,4 @@ umog_addon/compilation_info.json
 *.pyc
 *.pyd
 build/
-
+.DS_Store
