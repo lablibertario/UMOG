@@ -137,15 +137,15 @@ menus = OrderedDict([
         "bl_description": "Lorem Ipsum",
         "icon": "IMGDISPLAY",
         "nodes": [
-            #("umog_TextureNode", "Texture"),
+            ("umog_TextureNode", "Texture"),
             ("umog_TextureColorsNode", "Texture Colors"),
             ("umog_TextureSettingsNode", "Texture Settings"),
             ("umog_TextureAlternatorNode", "Texture Alternator"),
-            ("umog_SaveTextureNode", "Texture Save")
+            ("umog_SaveTextureNode", "Texture Save"),
             #("umog_GetTextureNode", "Get Texture"),
-            #("umog_SetTextureNode", "Set Texture"),
-            #("umog_LoadTextureNode", "Load Texture(s)"),
-            #("umog_TextureAlternatorNode", "Texture Alternator"),
+            ("umog_SetTextureNode", "Set Texture"),
+            ("umog_LoadTextureNode", "Load Texture(s)"),
+            ("umog_TextureAlternatorNode", "Texture Alternator"),
             
         ]
     })
