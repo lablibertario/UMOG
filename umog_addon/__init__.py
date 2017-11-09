@@ -14,21 +14,21 @@ menus = OrderedDict([
             ("umog_PyGLNode", "3d Reaction Diffusion"),
             #("umog_ReactionDiffusionNode", "Reaction Diffusion Node"),
             ("umog_ReactionDiffusionBGLNode", "Reaction Diffusion GPU"),
-            ("umog_ConvolveNode", "Convolve")
+            #("umog_ConvolveNode", "Convolve")
         ]
     }),
     (" ", "separator"),
-    ("develop_menu", {
-        "bl_idname": "umog_develop_menu",
-        "bl_label": "Develop Menu",
-        "text": "Develop",
-        "bl_description": "Lorem Ipsum",
-        "icon": "RECOVER_AUTO",
-        "nodes": [
-            ("umog_MotherNode", "Mother Node"),
-            ("umog_ScriptNode", "Script Node")
-        ]
-    }),
+    #("develop_menu", {
+        #"bl_idname": "umog_develop_menu",
+        #"bl_label": "Develop Menu",
+        #"text": "Develop",
+        #"bl_description": "Lorem Ipsum",
+        #"icon": "RECOVER_AUTO",
+        #"nodes": [
+            #("umog_MotherNode", "Mother Node"),
+            #("umog_ScriptNode", "Script Node")
+        #]
+    #}),
     ("object_menu", {
         "bl_idname": "umog_object_menu",
         "bl_label": "Object Menu",
@@ -40,17 +40,17 @@ menus = OrderedDict([
             ("umog_ObjectAlternatorNode", "Object Alternator")
         ]
     }),
-    ("bmesh_menu", {
-        "bl_idname": "umog_bmesh_menu",
-        "bl_label": "Bmesh Menu",
-        "text": "Bmesh",
-        "bl_description": "Lorem Ipsum",
-        "icon": "SURFACE_NSPHERE",
-        "nodes": [
-            ("umog_BMeshNode", "Bmesh Node"),
-            ("umog_BMeshCurlNode", "Bmesh Curl Node")
-        ]
-    }),
+    #("bmesh_menu", {
+        #"bl_idname": "umog_bmesh_menu",
+        #"bl_label": "Bmesh Menu",
+        #"text": "Bmesh",
+        #"bl_description": "Lorem Ipsum",
+        #"icon": "SURFACE_NSPHERE",
+        #"nodes": [
+            #("umog_BMeshNode", "Bmesh Node"),
+            #("umog_BMeshCurlNode", "Bmesh Curl Node")
+        #]
+    #}),
     ("geometry_menu", {
         "bl_idname": "umog_geometry_menu",
         "bl_label": "Geometry Menu",
@@ -104,19 +104,19 @@ menus = OrderedDict([
             ("umog_BooleanOpshNode", "Boolean Operations")
         ]
     }),
-    ("matrix_menu", {
-        "bl_idname": "umog_matrix_menu",
-        "bl_label": "Matrix Menu",
-        "text": "Matrix",
-        "bl_description": "Lorem Ipsum",
-        "icon": "MESH_GRID",
-        "nodes": [
-            ("umog_Mat3Node", "Matrix 3x3 Node"),
-            ("umog_MatrixMathNode", "Matrix Math"),
-            ("umog_GaussNode", "Gaussian Blur"),
-            ("umog_LaplaceNode", "Laplacian Filter")
-        ]
-    }),
+    #("matrix_menu", {
+        #"bl_idname": "umog_matrix_menu",
+        #"bl_label": "Matrix Menu",
+        #"text": "Matrix",
+        #"bl_description": "Lorem Ipsum",
+        #"icon": "MESH_GRID",
+        #"nodes": [
+            #("umog_Mat3Node", "Matrix 3x3 Node"),
+            #("umog_MatrixMathNode", "Matrix Math"),
+            #("umog_GaussNode", "Gaussian Blur"),
+            #("umog_LaplaceNode", "Laplacian Filter")
+        #]
+    #}),
     ("  ", "separator"),
     ("texture_menu", {
         "bl_idname": "umog_texture_menu",
