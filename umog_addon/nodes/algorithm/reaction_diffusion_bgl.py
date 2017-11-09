@@ -104,7 +104,7 @@ class ReactionDiffusionBGLNode(bpy.types.Node, UMOGNode):
         self.newInput("Float", "Kill", value=0.062, minValue = 0.0, maxValue = 1.0).isPacked = True
         self.newInput("Float", "A Rate", value=1.0, minValue = 0.0, maxValue = 1.0).isPacked = True
         self.newInput("Float", "B Rate", value=0.5, minValue = 0.0, maxValue = 1.0).isPacked = True
-        self.newInput("Float", "Delta Time", value=1.0, minValue = 0.0, maxValue = 1.0).isPacked = True
+        self.newInput("Float", "Delta Time", value=0.2, minValue = 0.0, maxValue = 1.0).isPacked = True
         self.newInput("Integer", "Steps", value=1, minValue = 1).isPacked = True
         self.newOutput(self.assignedType, "A'").isPacked = True
         self.newOutput(self.assignedType, "B'").isPacked = True

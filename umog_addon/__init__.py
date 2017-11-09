@@ -134,7 +134,7 @@ menus = OrderedDict([
     }),
         ("texture3d_menu", {
         "bl_idname": "umog_texture3d_menu",
-        "bl_label": "Texture 3d Menu",
+        "bl_label": "Voxel Menu",
         "text": "Texture3",
         "bl_description": "",
         "icon": "IMGDISPLAY",
