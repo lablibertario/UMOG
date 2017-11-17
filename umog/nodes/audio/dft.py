@@ -79,8 +79,8 @@ class STFTNode(UMOGNode):
                 spectrogram[x][y] = [r,g,b]
                 
         # Set spectrogram down in texture array
-        self.outputs[0].texture_index = refholder.createRefForTexture2d()
-        refholder.fillTextureRGB(self.outputs[0].texture_index, spectrogram, segments, fft_size)  
+        #self.outputs[0].texture_index = refholder.createRefForTexture2d()
+        #refholder.fillTextureRGB(self.outputs[0].texture_index, spectrogram, segments, fft_size)  
         
 
     def rgb(self, minimum, maximum, value):

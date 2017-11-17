@@ -79,7 +79,16 @@ class UMOGReferenceHolder:
                 for j in range(0, tr):
                     x, y = (i - trh) / trh, (j - trh) / trh
                     self.np2dtextures[index][i, j] = bpy.data.textures[name].evaluate((x, y, 0.0))
-
+    
+    # Given 2d array of rgb values, converts that to texture to store in np2dtextures
+    def fillTextureRGB(self, index, rgb_values, w, h):
+        self.np2dtextures[index] = np.zeros((w, h, 4))
+    
+        for i in range (0,w):
+            for j in range (0,h):
+                temp = rgb_values[i][j]
+                self.np2dtextures[index][i,j] = [temp[0],temp[1],temp[2],1.0]
+                
     # used to generate intermediate or output references
     def getNewRef(self):
         oldidx = self.ntindex
