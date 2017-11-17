@@ -52,7 +52,7 @@ class MatrixUnaryMathNode(UMOGNode):
         if self.matrix_output_operations == '0':
             if la.det(input_matrix) == 0:
                 print("Matrix has no inverse")
-            else
+            else:
                 answer_matrix = la.inv(input_matrix)
         
         elif self.matrix_output_operations == '1':
