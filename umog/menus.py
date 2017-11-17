@@ -191,9 +191,22 @@ menus = OrderedDict([
         "icon": "MESH_GRID",
         "nodes": [
             ("umog_Mat3Node", "Matrix 3x3 Node"),
-            ("umog_MatrixMathNode", "Matrix Math"),
+            ("umog_MatrixMathNode", "Matrix Binary Operations"),
+            ("umog_MatrixUnaryMathNode", "Matrix Unary Operations"),
             ("umog_GaussNode", "Gaussian Blur"),
             ("umog_LaplaceNode", "Laplacian Filter"),
+        ]
+    }),
+    ("sound_menu", {
+        "bl_idname": "umog_sound_menu",
+        "bl_label": "Sound Menu",
+        "text": "Sound",
+        "bl_description": "Nodes that operate on Sounds",
+        "icon": "SOUND",
+        "nodes": [
+            ("umog_LoadAudioNode", "Load Audio"),
+            ("umog_SaveAudioNode", "Save Audio"),
+            ("umog_STFTNode", "Short-Time Fourier Transform")
         ]
     }),
     ("  ", "separator"),
