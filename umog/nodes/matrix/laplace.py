@@ -8,10 +8,18 @@ class LaplaceNode(UMOGNode):
 
     laplace_matrix = np.array([[0.0, -1.0, 0.0], [-1.0, 4.0, -1.0], [0.0, -1.0, 0.0]])
     
+    radius = bpy.props.FloatProperty(default=10.0)
+    sigma = bpy.props.FloatProperty(default = 1.0)
+    
     def init(self, context):
         self.outputs.new("Mat3SocketType", "Output")
         super().init(context)
 
+        
+    def draw_buttons(self, context, layout):
+        layout.prop(self, "radius", text="Value")
+        layout.prop(self, "sigma", text="Value")
+        
     def preExecute(self, refholder):
         print('begin preExecute laplace')
         
