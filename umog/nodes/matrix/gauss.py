@@ -25,8 +25,8 @@ class GaussNode(UMOGNode):
         print('begin gauss')
     
         # generate matrix
-        gauss_matrix = np.zeros((self.radius, self.radius), dtype=np.float)
         size = self.radius
+        gauss_matrix = np.zeros((size, size), dtype=np.float)
         total = 0
         for i in range (-(size - 1)//2, (size - 1)//2 + 1):
             for j in range (-(size - 1)//2, (size - 1)//2 + 1):

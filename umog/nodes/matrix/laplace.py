@@ -5,27 +5,32 @@ import numpy as np
 class LaplaceNode(UMOGNode):
     bl_idname = "umog_LaplaceNode"
     bl_label = "Laplace Filter"
-
-    laplace_matrix = np.array([[0.0, -1.0, 0.0], [-1.0, 4.0, -1.0], [0.0, -1.0, 0.0]])
     
-    radius = bpy.props.FloatProperty(default=10.0)
-    sigma = bpy.props.FloatProperty(default = 1.0)
+    
+    radius = bpy.props.IntProperty(default = 3)
     
     def init(self, context):
         self.outputs.new("Mat3SocketType", "Output")
         super().init(context)
 
-        
     def draw_buttons(self, context, layout):
-        layout.prop(self, "radius", text="Value")
-        layout.prop(self, "sigma", text="Value")
+        layout.prop(self, "radius", text="Radius")
         
     def preExecute(self, refholder):
         print('begin preExecute laplace')
-        
-        self.outputs[0].matrix_ref = refholder.getRefForMatrix(self.laplace_matrix)
 
     def execute(self, refholder):
+    
         print('begin laplace')
-        for elem in self.laplace_matrix:
+    
+        # generate matrix
+        size = self.radius
+        laplace_matrix = np.ones((size, size), dtype=np.int)
+        
+        center = size // 2
+        laplace_matrix[center][center] = 1 - (size * size)
+        
+        self.outputs[0].matrix_ref = refholder.getRefForMatrix(laplace_matrix)
+
+        for elem in laplace_matrix:
             print(elem)
